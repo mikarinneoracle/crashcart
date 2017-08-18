@@ -27,3 +27,11 @@ build-nightly:
     - script:
         name: build
         code: ./build.sh
+        
+deploy:
+  steps:
+    - internal/docker-push:
+        username: mikarinneoracle
+        password: $DOCKER_PASSWORD
+        repository: crashcart
+        tag: 1.0
